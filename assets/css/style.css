@@ -199,3 +199,41 @@ display:none!important;
     transform: scale(1.1);
 }
 /* Product Section son */
+
+/* Video Grid system desing start*/
+.video-grid{
+    background-color: #F7F7F7;
+}
+.video-grid .container{
+  padding-top: 10%;
+}
+.video-grid h2
+{
+    margin: 0 0 19px;
+    font-size: 38px;
+    line-height: 1.447em; 
+    color: #2b2b2b;
+    font-family: "Playfair Display",serif;
+    font-weight: 400;
+}
+.video-grid h2 span
+{
+    color: #f34f3f;
+}
+.video-grid p ,ul li
+{
+    line-height: 24px;
+    margin-top: 27px;
+    color: #6d6a6a;
+    font-size: 21px;
+    margin-top: 27px;
+    font-family: Lora,serif;
+    font-weight: 400;
+}
+.video-grid ul li
+{
+  list-style-image: url(../../image/h1-custom-icon.png);
+  padding: 0 0 0 13px;
+  vertical-align: middle;
+}
+/* Video Grid system desing son*/
