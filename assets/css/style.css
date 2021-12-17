@@ -198,6 +198,37 @@ display:none!important;
 {  
     transform: scale(1.1);
 }
+.filter-product
+{
+    position: absolute;
+    left: 85%;
+    cursor: pointer;
+}
+
+.filter h6
+{
+    font-size: 22px;
+    line-height: 1.363em;
+}
+.filter ul li a
+{
+    font-size: 13px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #8b8b8b;
+}
+.filter ul li a:hover
+{
+    color: #f34f3f;
+}
+.filter 
+{
+    display: none;
+    position: absolute;
+    left: 63%;
+    margin-top: 25px;
+    z-index: 100;
+}
 /* Product Section son */
 
 /* Video Grid system desing start*/
@@ -220,7 +251,7 @@ display:none!important;
 {
     color: #f34f3f;
 }
-.video-grid p ,ul li
+.video-grid p ul li
 {
     line-height: 24px;
     margin-top: 27px;
@@ -237,3 +268,68 @@ display:none!important;
   vertical-align: middle;
 }
 /* Video Grid system desing son*/
+
+
+/* Join The Colorful Bunch!  Section  desing start */
+.join
+{
+    background-image: url(../../image/h3-background-img.jpg);
+    background-position: 50% 162px;
+    height: 519px;
+    width: 100%;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-attachment: fixed;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.join-button
+{
+    padding: 20px 0px;
+    border: 0;
+
+}
+.join-submit 
+{
+    background-color: #f34f3f;
+    padding: 20px 8px;
+    color: white;
+    border: 0;
+    text-transform: uppercase;
+   
+}
+
+
+.join h2
+{
+    color: white;
+    margin-bottom: 20px;
+}
+/* Join The Colorful Bunch!  Section  desing son */
+
+/*Footer desing start */
+footer
+{
+    background-color: #fefaf3;
+}
+footer ul li a
+{
+  text-decoration: none;
+  font-size: 12px;
+  color: #8b8b8b;
+}
+.socialmedia 
+{
+    text-decoration: none;
+    color: #8b8b8b;
+    cursor: pointer;
+}
+.socialmedia:hover
+{
+    text-decoration: none;
+    color: #f34f3f;
+}
+/*Footer desing son */
