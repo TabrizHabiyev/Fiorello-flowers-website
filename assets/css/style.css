@@ -7,35 +7,43 @@
 }
 
 /* Navbar Style Start */
-header
-{
-    width: 100%;
-    height: 115px;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    z-index: 1;
-    background-color: white;
-}
-#logo img{
-width: 222px;
-height: 25px;
-}
-nav{height: 100%;display: flex;  align-items: center;}
+@media (min-width: 1202px) 
+{ 
+    header
+    {
+        width: 100%;
+        height: 115px;
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        z-index: 1;
+        background-color: white;
+    }
+    header #menu .fa-bars-open , .fa-times-close
+    {
+        display: none;
+    }
+    #logo img
+    {
+        width: 222px;
+        height: 25px;
+    }
+    #menu .nav-menu .primary-menu-li:hover .home-sub-menu 
+    {
+        display: block;
+        opacity:1;
+    }
 .nav-menu 
 {
     list-style: none;
     display:flex;
-    height: 115px;
 }
-.nav-menu .primary-menu-li
+.nav-menu .primary-menu-li 
 {
     list-style: none;
     display: block;
     align-items: center;
     color: #1b1b1b;
-    text-transform: uppercase;
-    line-height: 100px;
     padding: 0 26px;
     position: relative;
 }
@@ -43,56 +51,330 @@ nav{height: 100%;display: flex;  align-items: center;}
 {
 color: black;
 }
-.search
+#menu .fa-caret-down
 {
-  font-size: 19px;
-  padding-left: 5px;
-  padding-right: 5px;
+    display: none;
 }
 .home-sub-menu ,.pages-sub-menu
 {
     position: absolute;
-    display: block;
     left: 0px;
-    top: 100%;
     width: 220%;
+    top: 275%;
     align-items: center;
-    line-height: 35px;
-    color: #8b8b8b;
-    font-size: 12px;
+    line-height: 30px;
+    font-size: 18px;
     font-family: Montserrat,sans-serif;
     font-weight: 400;
     cursor: pointer;
     background-color: #ffff;
     z-index: 100;
+    display: none; 
+     opacity: 0; 
+
+}
+
+
+/* navbar blog sub menu */
+#menu .shop-sub-menu
+{
+    left: -474.973px;
+    width: 1100px;
+    position: absolute;
+    z-index: 1000;
+    background-color: #ffffff;
+    line-height: 200%;
+    display: none; 
+    top: 275%;
+}
+#menu .nav-menu .primary-menu-li:hover .shop-sub-menu
+{
+    display: block;
+    opacity:1;
+}
+#menu .shop-sub-menu h6
+{
+    font-family: "Playfair Display",serif;
+    font-size: 22px;
+    text-transform: none;
+    line-height: 1.1em;
+    color: #1b1b1b;
+}
+/* navbar blog sub menu son*/
+
+/*Navbar Serarch */
+.search-sub-menu
+{
+    position: absolute;
+    left: -264.973px;
+    width: max-content;
+    align-items: center;
+    z-index: 31;
+    line-height: 200%;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    top: 271%;
     display: none;
-    opacity:0;
 }
-.home-sub-menu li
+#menu .search-sub-menu input,button
 {
- padding-left: 17px;
-}
-.home-sub-menu ul
-{
-  list-style: none;
 
-  
+background-color: white;
+border: none;
+outline: none;
 }
-.nav-menu .primary-menu-li:hover .home-sub-menu 
+#menu .search-sub-menu input
 {
-    display: block;
-    opacity:1;
+width: 250px;
 }
-.nav-menu .primary-menu-li:hover .pages-sub-menu
+#menu .search .fa-search
 {
-    display: block;
-    opacity:1;
-}
-.nav-menu:hover
-{
- cursor:pointer;
+transform:rotateY(180deg);
 }
 
+/*Navbar Serarch  son*/
+
+/*Navbar Card  */
+#menu .card-sub-menu
+{
+    position: absolute;
+    width: 254px;
+    left: -70.973px;
+    top: 275%;
+    z-index: 30;
+    height: max-content;
+    background-color: rgb(255, 255, 255);
+    word-wrap: break-word;
+    padding: 10px;
+    cursor: auto!important;
+    display: none; 
+}
+#menu .card-sub-menu ul
+{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin-bottom: 10px;
+}
+#menu .card-sub-menu .card-context
+{
+    height: 65px;
+    line-height: 10px;
+    
+}
+#menu .card-sub-menu .delete 
+{
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 50px;
+}
+#menu .card-sub-menu .card-context span
+{
+    color: #afafaf;
+    font-size: 14px;
+}
+#menu .card-sub-menu .card-context h6
+{
+    cursor: pointer;
+}
+#menu .card-sub-menu img
+{
+    margin-right: 10px;
+    cursor: pointer;
+}
+#menu .card-sub-menu .total
+{
+    float: right;
+}
+/*Navbar Card Son */
+
+#menu .fa-caret-right
+{
+    display: none;
+}
+#menu a
+{
+  text-decoration: none;
+}
+#menu .primary-menu-li ul li a
+{
+    color: #737373;
+}
+
+#menu .primary-menu-li ul li a::after 
+{
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: #737373;
+    transition: 400ms;
+}
+#menu .primary-menu-li ul li  a:hover::after {
+    width: 60%;
+  }
+
+#menu .primary-menu-li > a
+  {
+    padding: 45px 12px;
+  }
+
+
+  .nav-menu .primary-menu-li:hover .pages-sub-menu
+  {
+      display: block;
+      opacity:1;
+  }
+  .nav-menu:hover
+  {
+   cursor:pointer;
+  }
+}
+
+
+
+
+@media (max-width: 1024px) 
+{ 
+
+    header
+    {
+        width: 100%;
+        height: 69px;
+        align-items: center;
+        display: flex;
+        z-index: 1;
+        background-color: white;
+    }
+#menu 
+{
+    width: 0;
+    max-width: 0;
+    min-width: 0;
+    padding: 0;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    box-sizing: border-box;
+    transition: 0.5s;
+    background-color: #fff;
+}
+
+#menu .primary-menu-li .shop-sub-menu
+{
+  display: none;
+}
+
+#menu .nav-menu  li 
+{
+    margin: 24px;
+}
+#menu .shop-sub-menu h6
+{
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #8b8b8b;
+}
+#menu .primary-menu-li .shopping-cart-m
+{
+    display: none;
+}
+#menu .primary-menu-li .shop-sub-menu .row
+{
+  display: block!important;
+}
+#menu .shop-sub-menu ul li 
+{
+   display: none;
+   margin: 0;
+   margin-bottom: 10px;
+   padding: 0;
+}
+
+#menu .shop-sub-menu ul li a
+{
+    color: #8b8b8b;
+}
+#menu .home-sub-menu ul li 
+{
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+#menu .home-sub-menu ul li a
+{
+    color: #8b8b8b;
+}
+
+#menu .pages-sub-menu ul li 
+{
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+#menu .pages-sub-menu ul li a
+{
+    color: #8b8b8b;
+}
+
+#logo img
+{
+    width: 212px!important;
+    height: 25px!important;
+}
+#menu .fa-times
+{
+    position: fixed;
+    top: 3%;
+    right: 5%;
+    color: #f34f3f;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+#menu .fa-bars
+{
+    position: fixed;
+    top: 3%;
+    right: 5%;
+    color: #6d6a6a;
+    font-size: 22px;
+    cursor: pointer;
+}
+#menu ul
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+#menu a
+{
+    text-decoration: none;
+    color: #0e0e0e;
+    font-weight: 500;
+}
+
+#menu  .fa-caret-right
+{
+    display: inline;
+}
+#menu .fa-caret-down
+{
+    display: none;
+}
+#menu  .home-sub-menu , .pages-sub-menu
+{
+   display: none;
+}
+#menu .search , .cart
+{
+    display: none;
+}
+}
 /* Navbar Style Son */
 
 
@@ -151,6 +433,7 @@ color: black;
 {
     border: none!important;
 }
+
 #pills-tabContent  .add-to-cart a:hover
 {
    color: #f34f3f!important;
@@ -179,8 +462,6 @@ display:none!important;
 #pills-tabContent .product-price{
     color: #afafaf;
 }
-
-
 
 .filter-product
 {
@@ -221,6 +502,10 @@ display:none!important;
     transition: transform 0.3009s ease-in-out!important;
     cursor: pointer;
 }
+#video-grid .card:hover img
+{  
+    transform: scale(1.1);
+}
 #video-grid .position-absolute
 {
 top: 35%;
@@ -238,11 +523,6 @@ color: #f34f3f;
     background-color: rgb(255, 255, 255);
      z-index: 1000;
      cursor: pointer;
-}
-
-#video-grid .card:hover img
-{  
-    transform: scale(1.1);
 }
 #video-grid{
     background-color: #F7F7F7;
@@ -312,9 +592,7 @@ color: #f34f3f;
     color: white;
     border: 0;
     text-transform: uppercase;
-   
 }
-
 
 .join h2
 {
@@ -322,6 +600,24 @@ color: #f34f3f;
     margin-bottom: 20px;
 }
 /* Join The Colorful Bunch!  Section  desing son */
+
+
+/* Blog Section desing Start   */
+#blog-section , .card
+{
+    background-color:  #F8F8F8;
+}
+#blog-section img
+{
+    transition: transform 0.3009s ease-in-out!important;
+    cursor: pointer!important;
+}
+#blog-section  img:hover
+{
+    transform: scale(1.1);
+}
+/* Blog Section desing Son */
+
 
 /*Footer desing start */
 footer

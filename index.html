@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./draggable-carousel-jelly/css/jellySlider.css">
   <link rel="stylesheet" href="./vegasSlider/vegas.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,13 +15,16 @@
 <body>
 
   <!--Navbar start-->
-  <!-- <header>
+  <header>
     <div id="logo"><img src="./image/logo.png" alt=""></div>
     <div id="menu">
+      <i class="fas fa-bars fa-bars-open" onclick="openNav()"></i>
+      <i class="fal fa-times fa-times-close" onclick="closeNav()"></i>
       <nav>
-        <ul class="nav-menu">
-          <li class="primary-menu-li">
-            <a href=""> home</a>
+        <ul class="nav-menu" id="nav-menu">
+          <li class="primary-menu-li ">
+            <a href="#" class="text-uppercase" id="homeSub">home <i class="fas fa-caret-right"></i><i
+                class="fas fa-caret-down"></i></a>
             <div class="home-sub-menu">
               <ul>
                 <li><a href="">Main Home</a></li>
@@ -33,7 +38,8 @@
             </div>
           </li>
           <li class="primary-menu-li">
-            <a href=""> pages</a>
+            <a href="#" class="text-uppercase" id="pagesSub"> pages <i class="fas fa-caret-right"></i><i
+                class="fas fa-caret-down"></i></a>
             <div class="pages-sub-menu">
               <ul>
                 <li><a href="">About Us</a></li>
@@ -41,49 +47,149 @@
                 <li><a href="">Contact Us</a></li>
               </ul>
             </div>
-
           </li>
           <li class="primary-menu-li">
-            <a href="">shop</a>
+            <a href="#" class="text-uppercase " id="shopSub">shop <i class="fas fa-caret-right"></i><i
+                class="fas fa-caret-down"></i></a>
+            <div class="shop-sub-menu">
+              <div class="row  justify-content-around">
+                <div class="col mb-3">
+                  <ul>
+                    <h6>Product Types <i class="fas fa-caret-right"></i><i class="fas fa-caret-down"></i></h6>
+                    <li><a href="">Standard Product</a></li>
+                    <li><a href="">Grouped Product</a></li>
+                    <li><a href="">Variable Product</a></li>
+                    <li><a href="">Virtual Product</a></li>
+                    <li><a href="">External Product</a></li>
+                    <li><a href="">Downloadable Product</a></li>
+                    <li><a href="">On Sale Product</a></li>
+                    <li><a href="">Out Of Stock Product</a></li>
+                    <li><a href="">New Product</a></li>
+                  </ul>
+                </div>
+                <div class="col mb-3">
+                  <ul>
+                    <h6>Shop Pages <i class="fas fa-caret-right"></i><i class="fas fa-caret-down"></i></h6>
+                    <li><a href="">My Account</a></li>
+                    <li><a href="">Cart</a></li>
+                    <li><a href="">Checkout</a></li>
+                    <li><a href="">Orders</a></li>
+                    <li><a href="">Downloads</a></li>
+                  </ul>
+                </div>
+                <div class="col mb-3">
+                  <ul>
+                    <h6>Shop Types <i class="fas fa-caret-right"></i><i class="fas fa-caret-down"></i></h6>
+                    <li><a href="">Product List</a></li>
+                    <li><a href="">Without Sidebar</a></li>
+                    <li><a href="">With Category Filter</a></li>
+                    <li><a href="">With Ordering Filter</a></li>
+                    <li><a href="">Shop Carousel</a></li>
+                    <li><a href="">Downloadable Product</a></li>
+                    <li><a href="">Product Categories</a></li>
+                    <li><a href="">Single Category</a></li>
+                  </ul>
+                </div>
+                <div class="col mb-3">
+                  <ul>
+                    <h6>Shop Layouts <i class="fas fa-caret-right"></i> <i class="fas fa-caret-down"></i></h6>
+                    <li><a href="">Two Columns Grid</a></li>
+                    <li><a href="">Three Columns Grid</a></li>
+                    <li><a href="">Four Columns Grid</a></li>
+                    <li><a href="">Four Columns Wide</a></li>
+                    <li><a href="">Five Columns Wide</a></li>
+                    <li><a href="">Six Columns Wide</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </li>
-          <li class="primary-menu-li"><a href="">portfolio</a></li>
-          <li class="primary-menu-li"><a href="">blog</a></li>
-          <li class="primary-menu-li"><a href="">elements</a></li>
-        </ul>
-        <div class="search">
-          <a href=""> <i class="fal fa-search"></i></a>
-        </div>
-
-        <div class="cart">
-          <a href=""><i class="fal fa-shopping-bag"></i> cart [$0]</a>
-        </div>
-
-      </nav>
+          <li class="primary-menu-li">
+            <a href="" class="text-uppercase">portfolio <i class="fas fa-caret-right"></i></a>
+          </li>
+          <li class="primary-menu-li"><a href="" class="text-uppercase">blog <i class="fas fa-caret-right"></i></a></li>
+          <li class="primary-menu-li"><a href="" class="text-uppercase">elements <i class="fas fa-caret-right"></i></a>
+          </li>
+          <li class="primary-menu-li d-flex bottom-10">
+            <div class="search">
+              <button class="searchbtn"> <i class="fal fa-search" style="margin-right: 20px;"></i></button>
+              <div class="search-sub-menu">
+                <input type="text"><button><i class="fal fa-search"></i></button>
+              </div>
+            </div>
+            <div class="shopping-cart-m">
+              <button class="text-uppercase shopping-bag-show-btn"><i class="fal fa-shopping-bag"></i> cart
+                [$0]</button>
+              <div class="card-sub-menu">
+                <ul>
+                  <li>
+                    <img src="./image/product-photo/product-img2.jpg" alt="" width="50" height="65">
+                  </li>
+                  <li>
+                    <div class="card-context">
+                      <h6 class="text-uppercase">Majesty Palm</h6>
+                      <span>3 X</span>
+                      <span>$250</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="delete text-danger">x</span>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <img src="./image/product-photo/product-img2.jpg" alt="" width="50" height="65">
+                  </li>
+                  <li>
+                    <div class="card-context">
+                      <h6 class="text-uppercase">Majesty Palm</h6>
+                      <span>3 X</span>
+                      <span>$250</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="delete text-danger">x</span>
+                  </li>
+                </ul>
+                <span>TOTAL:</span>
+                <span class="total">$777</span><br>
+                <div class="clearfix">
+                  <button type="button" class="float-start btn btn-danger mt-3 text-uppercase border-0 rounded-0">VIEW
+                    CART</button>
+                  <button type="button"
+                    class="float-end btn btn-dark mt-3 text-uppercase border-0 rounded-0">CHECKOUT</button>
+                </div>
+              </div>
+            </div>
 
     </div>
-  </header> -->
+    </li>
+    </ul>
+    </nav>
+    </div>
+  </header>
   <!--Navbar Son-->
 
 
   <!--Slider start-->
   <section id="slider">
-      <div class="container">
-         <div class="row ">
-          <div class="col" ></div>
-           <div class="col-6 col-sm-4 col-md-4  s-contect" > 
-            <h3>Send flowers  like you mean it. </h3>
-            <p class="word-wrap">
-              Where flowers are our inspiration to create 
-              lasting memories. Whatever the occasion, our
-               flowers will make it special cursus a sit 
-               amet mauris. 
-            </p>
-            <img src="./image/slider-photo/h2-sign-img.png" alt="">
-       
-           </div>
-            <div class="col" ></div>
-         </div>
-         </div>
+    <div class="container">
+      <div class="row ">
+        <div class="col"></div>
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 s-contect">
+          <h3>Send flowers like you mean it. </h3>
+          <p class="word-wrap">
+            Where flowers are our inspiration to create
+            lasting memories. Whatever the occasion, our
+            flowers will make it special cursus a sit
+            amet mauris.
+          </p>
+          <img src="./image/slider-photo/h2-sign-img.png" alt="">
+
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
     <i class="fal fa-long-arrow-left"></i>
     <i class="fal fa-long-arrow-right"></i>
   </section>
@@ -92,451 +198,469 @@
   <!--Products tab start-->
   <section class="products-tab">
     <div class="container">
-    <ul class="nav  mb-3 " id="pills-tab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link text-dark text-uppercase bg-white  border-0 active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-          type="button" role="tab" aria-controls="pills-home" aria-selected="true">All</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link text-dark text-uppercase bg-white   border-0" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-          type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Popular</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link  text-dark text-uppercase bg-white   border-0" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-          type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Winter</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link text-dark text-uppercase bg-white   border-0" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-          type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Various</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link text-dark text-uppercase bg-white   border-0" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-          type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Exotic</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link text-dark  text-uppercase bg-white   border-0" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-          type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Greens</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link text-dark text-uppercase bg-white  border-0" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-          type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Cactuses</button>
-      </li>
-      <div  id="filter-product" class="filter-product ">
-      <span  >FILTER<i class="fas fa-caret-down"></i></span>
-      </div>
-      <div id="filter" class="filter" style=" background-color: rgb(255, 255, 255);padding-bottom: 20px;padding-left: 7px;">
-       <div class="container">
-         <div class="row ">
-             <div class="col">
-              <ul>
-                <h6>Sort By</h6>
-                <li><a href=""> Default</a></li>
-                <li><a href="">Popularity</a></li>
-                <li><a href="">Newness</a></li>
-                <li><a href="">Price: Low To High</a></li>
-                <li><a href="">Login</a></li>
-                <li><a href="">Price: High To Low</a></li>
-              </ul>
-             </div>
-             <div class="col">
-              <ul>
-                <h6>Price Range</h6>
-                <li><a href="">All</a></li>
-                <li><a href="">$0-$10</a></li>
-                <li><a href="">$20-$30</a></li>
-                <li><a href="">$30-$40</a></li>
-                <li><a href="">40$+</a></li>
-              </ul>
-             </div>
-         </div>
-       </div>
-      </div>
-    </ul>
-    <div class="tab-content" id="pills-tabContent">
-      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-        <div class="album py-5 ">
+      <ul class="nav  mb-3 " id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-dark text-uppercase bg-white  border-0 active" id="pills-home-tab"
+            data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+            aria-selected="true">All</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-dark text-uppercase bg-white   border-0" id="pills-profile-tab"
+            data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+            aria-selected="false">Popular</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link  text-dark text-uppercase bg-white   border-0" id="pills-contact-tab"
+            data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+            aria-selected="false">Winter</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-dark text-uppercase bg-white   border-0" id="pills-contact-tab"
+            data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+            aria-selected="false">Various</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-dark text-uppercase bg-white   border-0" id="pills-contact-tab"
+            data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+            aria-selected="false">Exotic</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-dark  text-uppercase bg-white   border-0" id="pills-contact-tab"
+            data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+            aria-selected="false">Greens</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-dark text-uppercase bg-white  border-0" id="pills-contact-tab"
+            data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+            aria-selected="false">Cactuses</button>
+        </li>
+        <div id="filter-product" class="filter-product ">
+          <span>FILTER<i class="fas fa-caret-down"></i></span>
+        </div>
+        <div id="filter" class="filter"
+          style=" background-color: rgb(255, 255, 255);padding-bottom: 20px;padding-left: 7px;">
           <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 ">
-              <div class="col mb-5 ">
-                <div class="card">
-                  <div class="card overflow-hidden ">
-                    <img src="./image/product-photo/product-img1.jpg" alt="">
-                  </div>
-                  <div class="card-body">
-                    <h6 class="product-name d-flex justify-content-center">
-                      <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty Palm</a>
-                    </h6>
-                    <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
-                    <span class="add-to-cart  product-price d-flex justify-content-center">
-                     $259
-                    </span>
-                </div>
-                </div>
+            <div class="row ">
+              <div class="col">
+                <ul>
+                  <h6>Sort By</h6>
+                  <li><a href=""> Default</a></li>
+                  <li><a href="">Popularity</a></li>
+                  <li><a href="">Newness</a></li>
+                  <li><a href="">Price: Low To High</a></li>
+                  <li><a href="">Login</a></li>
+                  <li><a href="">Price: High To Low</a></li>
+                </ul>
               </div>
-              <div class="col  mb-5">
-                <div class="card">
-                  <div class="card overflow-hidden">
-                    <img src="./image/product-photo/product-img2.jpg" alt="">
-                  </div>
-                  <div class="card-body ">
-                    <h6 class="product-name d-flex justify-content-center">
-                      <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty Palm</a>
-                    </h6>
-                    <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
-                    <span class="add-to-cart  product-price d-flex justify-content-center">
-                     $259
-                    </span>
-                </div>
-                </div>
+              <div class="col">
+                <ul>
+                  <h6>Price Range</h6>
+                  <li><a href="">All</a></li>
+                  <li><a href="">$0-$10</a></li>
+                  <li><a href="">$20-$30</a></li>
+                  <li><a href="">$30-$40</a></li>
+                  <li><a href="">40$+</a></li>
+                </ul>
               </div>
-              <div class="col  mb-5">
-                <div class="card">
-                  <div class="card overflow-hidden">
-                    <img src="./image/product-photo/product-img3.jpg" alt="">
-                  </div>
-                  <div class="card-body ">
-                    <h6 class="product-name d-flex justify-content-center">
-                      <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty Palm</a>
-                    </h6>
-                    <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
-                    <span class="add-to-cart  product-price d-flex justify-content-center">
-                     $259
-                    </span>
-                </div>
-                </div>
-              </div>
-
-              <div class="col  mb-5">
-                <div class="card">
-                  <div class="card overflow-hidden">
-                    <img src="./image/product-photo/product-img4.jpg" alt="">
-                  </div>
-                  <div class="card-body ">
-                    <h6 class="product-name d-flex justify-content-center">
-                      <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty Palm</a>
-                    </h6>
-                    <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
-                    <span class="add-to-cart  product-price d-flex justify-content-center">
-                     $259
-                    </span>
-                </div>
-                </div>
-              </div>
-              <div class="col  mb-5">
-                <div class="card">
-                  <div class="card overflow-hidden">
-                    <img src="./image/product-photo/product-img5.jpg" alt="">
-                  </div>
-                  <div class="card-body ">
-                    <h6 class="product-name d-flex justify-content-center">
-                      <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty Palm</a>
-                    </h6>
-                    <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
-                    <span class="add-to-cart  product-price d-flex justify-content-center">
-                     $259
-                    </span>
-                </div>
-                </div>
-              </div>
-              <div class="col  mb-5">
-                <div class="card">
-                  <div class="card overflow-hidden">
-                    <img src="./image/product-photo/product-img6.jpg" alt="">
-                  </div>
-                  <div class="card-body ">
-                    <h6 class="product-name d-flex justify-content-center">
-                      <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty Palm</a>
-                    </h6>
-                    <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
-                    <span class="add-to-cart  product-price d-flex justify-content-center">
-                     $259
-                    </span>
-                </div>
-                </div>
-              </div>
-
-              <div class="col  mb-5">
-                <div class="card">
-                  <div class="card overflow-hidden">
-                    <img src="./image/product-photo/product-img7.jpg" alt="">
-                  </div>
-                  <div class="card-body ">
-                    <h6 class="product-name d-flex justify-content-center">
-                      <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty Palm</a>
-                    </h6>
-                    <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
-                    <span class="add-to-cart  product-price d-flex justify-content-center">
-                     $259
-                    </span>
-                </div>
-                </div>
-              </div>
-              <div class="col  mb-5">
-                <div class="card">
-                  <div class="card overflow-hidden">
-                    <img src="./image/product-photo/product-img8.jpg" alt="">
-                  </div>
-                  <div class="card-body ">
+            </div>
+          </div>
+        </div>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="album py-5 ">
+            <div class="container">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 ">
+                <div class="col mb-5 ">
+                  <div class="card">
+                    <div class="card overflow-hidden ">
+                      <img src="./image/product-photo/product-img1.jpg" alt="">
+                    </div>
+                    <div class="card-body bg-white">
                       <h6 class="product-name d-flex justify-content-center">
-                        <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty Palm</a>
+                        <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty
+                          Palm</a>
                       </h6>
                       <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
                       <span class="add-to-cart  product-price d-flex justify-content-center">
-                       $259
+                        $259
                       </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col  mb-5">
+                  <div class="card">
+                    <div class="card overflow-hidden">
+                      <img src="./image/product-photo/product-img2.jpg" alt="">
+                    </div>
+                    <div class="card-body bg-white">
+                      <h6 class="product-name d-flex justify-content-center">
+                        <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty
+                          Palm</a>
+                      </h6>
+                      <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
+                      <span class="add-to-cart  product-price d-flex justify-content-center">
+                        $259
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col  mb-5">
+                  <div class="card">
+                    <div class="card overflow-hidden">
+                      <img src="./image/product-photo/product-img3.jpg" alt="">
+                    </div>
+                    <div class="card-body bg-white">
+                      <h6 class="product-name d-flex justify-content-center">
+                        <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty
+                          Palm</a>
+                      </h6>
+                      <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
+                      <span class="add-to-cart  product-price d-flex justify-content-center">
+                        $259
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col  mb-5">
+                  <div class="card">
+                    <div class="card overflow-hidden">
+                      <img src="./image/product-photo/product-img4.jpg" alt="">
+                    </div>
+                    <div class="card-body bg-white">
+                      <h6 class="product-name d-flex justify-content-center">
+                        <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty
+                          Palm</a>
+                      </h6>
+                      <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
+                      <span class="add-to-cart  product-price d-flex justify-content-center">
+                        $259
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col  mb-5">
+                  <div class="card">
+                    <div class="card overflow-hidden">
+                      <img src="./image/product-photo/product-img5.jpg" alt="">
+                    </div>
+                    <div class="card-body bg-white">
+                      <h6 class="product-name d-flex justify-content-center">
+                        <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty
+                          Palm</a>
+                      </h6>
+                      <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
+                      <span class="add-to-cart  product-price d-flex justify-content-center">
+                        $259
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col  mb-5">
+                  <div class="card">
+                    <div class="card overflow-hidden">
+                      <img src="./image/product-photo/product-img6.jpg" alt="">
+                    </div>
+                    <div class="card-body bg-white">
+                      <h6 class="product-name d-flex justify-content-center">
+                        <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty
+                          Palm</a>
+                      </h6>
+                      <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
+                      <span class="add-to-cart  product-price d-flex justify-content-center">
+                        $259
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col  mb-5">
+                  <div class="card">
+                    <div class="card overflow-hidden">
+                      <img src="./image/product-photo/product-img7.jpg" alt="">
+                    </div>
+                    <div class="card-body bg-white">
+                      <h6 class="product-name d-flex justify-content-center">
+                        <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty
+                          Palm</a>
+                      </h6>
+                      <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
+                      <span class="add-to-cart  product-price d-flex justify-content-center">
+                        $259
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col  mb-5">
+                  <div class="card">
+                    <div class="card overflow-hidden">
+                      <img src="./image/product-photo/product-img8.jpg" alt="">
+                    </div>
+                    <div class="card-body bg-white">
+                      <h6 class="product-name d-flex justify-content-center">
+                        <a itemprop="url" href="#" class="text-dark text-uppercase text-decoration-none">Majesty
+                          Palm</a>
+                      </h6>
+                      <a href="" style="display: none;" class="add-tocart-hover">Add to cart</a>
+                      <span class="add-to-cart  product-price d-flex justify-content-center">
+                        $259
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-      </div>
-      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
+        </div>
       </div>
-    </div>
   </section>
   <!--Products tab son-->
 
 
   <!--Video Grid system start-->
-<section id="video-grid"   style="margin-bottom: 10%;">
-  <div class="container">
-    <div class="row row-cols-sm-1 row-cols-md-2">
-      <div class="col">
-        <div class="card shadow-sm " >
-          <div class="position-absolute">
-              <div id="play"> 
+  <section id="video-grid" style="margin-bottom: 10%;">
+    <div class="container">
+      <div class="row row-cols-sm-1 row-cols-md-2">
+        <div class="col">
+          <div class="card shadow-sm overflow-hidden">
+            <div class="position-absolute">
+              <div id="play">
                 <i class="fas fa-play"></i>
               </div>
+            </div>
+            <img src="./image/video-photo/h3-video-img.jpg" alt="" sizes="(max-width: 800px) 100vw, 800px">
           </div>
-          <img src="./image/video-photo/h3-video-img.jpg" alt=""    sizes="(max-width: 800px) 100vw, 800px">
+        </div>
+        <div class="col">
+          <h2>Suprise Your <span>Valentine!</span>
+            Let us arrange a smile.</h2>
+          <p>Where flowers are our inspiration to create lasting memories. Whatever the occasion...</p>
+          <ul>
+            <li>Hand picked just for you.</li>
+            <li>Unique flower arrangements</li>
+            <li>Best way to say you care.</li>
+          </ul>
         </div>
       </div>
-      <div class="col">
-       <h2>Suprise Your <span>Valentine!</span> 
-        Let us arrange a smile.</h2>
-        <p>Where flowers are our inspiration to create lasting memories. Whatever the occasion...</p>
-        <ul>
-          <li>Hand picked just for you.</li>
-          <li>Unique flower arrangements</li>
-          <li>Best way to say you care.</li>
-        </ul>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
   <!--Video Grid system son-->
 
 
   <!--Flower Experts Section start-->
-<section class="expert" style="margin-bottom: 10%;">
-  <div class="container">
-		<div class="row">
-			<div class="col-sm-6 offset-sm-3 mt-4 mb-4">
-				<h2 class="text-center">Flower Experts</h2>
-				<p class="text-center">A perfect blend of creativity, energy, communication, 
-          happiness and love. Let us arrange a smile for you.</p>
-			</div>
-		</div>
+  <section class="expert" style="margin-bottom: 10%;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 offset-sm-3 mt-4 mb-4">
+          <h2 class="text-center">Flower Experts</h2>
+          <p class="text-center">A perfect blend of creativity, energy, communication,
+            happiness and love. Let us arrange a smile for you.</p>
+        </div>
+      </div>
 
-		<div class="row row row-cols-2 row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
-			<div class="col">
-				<div class="card-box text-center">
-					<div class="user-pic  overflow-hidden">
-						<img src="./image/experts-thubnail/avatar1.png" class="img-fluid" alt="User Pic">
-					</div>
-					<h4>CRYSTAL BROOKS</h4>
-					<h6>Floristr</h6>
-				</div>
-			</div>
-      <div class="col">
-				<div class="card-box text-center">
-					<div class="user-pic  overflow-hidden">
-						<img src="./image/experts-thubnail/avatar2.png" class="img-fluid" alt="User Pic">
-					</div>
-					<h4>SHIRLEY HARRIS</h4>
-					<h6>Manager</h6>
-				</div>
-			</div>
-      <div class="col">
-				<div class="card-box text-center ">
-					<div class="user-pic  overflow-hidden">
-						<img src="./image/experts-thubnail/avatar3.png" class="img-fluid" alt="User Pic">
-					</div>
-					<h4>BEVERLY CLARK</h4>
-					<h6>Florist</h6>
-				</div>
-			</div>
-      <div class="col">
-				<div class="card-box text-center ">
-					<div class="user-pic ">
-						<img src="./image/experts-thubnail/avatar4.png" class="img-fluid" alt="User Pic">
-					</div>
-					<h4>AMANDA WATKINS</h4>
-					<h6>Florist</h6>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+      <div class="row row row-cols-2 row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+        <div class="col">
+          <div class="card-box text-center">
+            <div class="user-pic  overflow-hidden">
+              <img src="./image/experts-thubnail/avatar1.png" class="img-fluid" alt="User Pic">
+            </div>
+            <h4>CRYSTAL BROOKS</h4>
+            <h6>Floristr</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card-box text-center">
+            <div class="user-pic  overflow-hidden">
+              <img src="./image/experts-thubnail/avatar2.png" class="img-fluid" alt="User Pic">
+            </div>
+            <h4>SHIRLEY HARRIS</h4>
+            <h6>Manager</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card-box text-center ">
+            <div class="user-pic  overflow-hidden">
+              <img src="./image/experts-thubnail/avatar3.png" class="img-fluid" alt="User Pic">
+            </div>
+            <h4>BEVERLY CLARK</h4>
+            <h6>Florist</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card-box text-center ">
+            <div class="user-pic ">
+              <img src="./image/experts-thubnail/avatar4.png" class="img-fluid" alt="User Pic">
+            </div>
+            <h4>AMANDA WATKINS</h4>
+            <h6>Florist</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!--Flower Experts Section son-->
 
 
   <!--Join The Colorful Bunch! Section start-->
   <section class="join">
- <div class="container">
-   <div class="row d-flex justify-content-center">
-     <h2>Join The Colorful Bunch!</h2>
-      <div class="col-md-4 mb-3">
-        <div class="input-group">
-          <input type="text" class="form-control join-button " id="validationCustomUsername" placeholder="Email Adress" aria-describedby="inputGroupPrepend" required>
-          <div class="input-group-prepend">
-          <button class="input-group-text  join-submit" id="inputGroupPrepend">Subscribe</button>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <h2>Join The Colorful Bunch!</h2>
+        <div class="col-md-4 mb-3">
+          <div class="input-group">
+            <input type="text" class="form-control join-button " id="validationCustomUsername"
+              placeholder="Email Adress" aria-describedby="inputGroupPrepend" required>
+            <div class="input-group-prepend">
+              <button class="input-group-text  join-submit" id="inputGroupPrepend">Subscribe</button>
+            </div>
           </div>
         </div>
       </div>
-   </div>
- </div>
+    </div>
   </section>
   <!--Join The Colorful Bunch! Section son-->
 
   <!--From our Blog section start-->
-  <section class="blog-section" style="margin-bottom: 10%;">
+  <section id="blog-section">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 offset-sm-3 mt-4 mb-4">
           <h2 class="text-center">From our Blog</h2>
-          <p class="text-center">A perfect blend of creativity, energy, 
+          <p class="text-center">A perfect blend of creativity, energy,
             communication, happiness and love. Let us arrange a smile for you.</p>
         </div>
       </div>
-  
-      <div class="row row row-cols-2 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 d-flex justify-content-center">
+
+      <div class="row  row-cols-1 row-cols-sm-3 row-cols-md-3 row-cols-lg-3 d-flex justify-content-center">
         <div class="col">
-          <div class="card shadow-sm ">
-            <div class="card overflow-hidden">
-              <img src="./image/main-page-blog-photo/blog-feature-img-1.jpg" alt="" >
+          <div class="card  shadow-sm border-0 shadow-none">
+            <div class="card overflow-hidden border-0 shadow-none">
+              <img src="./image/main-page-blog-photo/blog-feature-img-1.jpg" alt="">
             </div>
-            <div class="card-body ">
+            <div class="card-body bg-transparent">
               <h6 class="product-name d-flex justify-content-center">
-                <a itemprop="url" href="#">Flower Power</a>
+                <a itemprop="url" class="text-dark text-decoration-none" href="#">Flower Power</a>
               </h6>
-            <span class="add-to-cart d-flex justify-content-center">
-              <p>Class aptent taciti sociosqu 
-                ad litora torquent per conubia 
-                nostra, per</p>
-            </span>
-          </div>
+              <span class="add-to-cart d-flex justify-content-center">
+                <p>Class aptent taciti sociosqu
+                  ad litora torquent per conubia
+                  nostra, per</p>
+              </span>
+            </div>
           </div>
         </div>
         <div class="col">
-          <div class="card shadow-sm">
-            <div class="card overflow-hidden">
-              <img src="./image/main-page-blog-photo/blog-feature-img-2.jpg" alt="" >
+          <div class="card shadow-sm border-0 shadow-none">
+            <div class="card overflow-hidden border-0 shadow-none">
+              <img src="./image/main-page-blog-photo/blog-feature-img-2.jpg" alt="">
             </div>
-            <div class="card-body ">
+            <div class="card-body bg-transparent">
               <h6 class="product-name d-flex justify-content-center">
-                <a itemprop="url" href="#">Local Florists</a>
+                <a itemprop="url" class="text-dark text-decoration-none" href="#">Local Florists</a>
               </h6>
-            <span class="add-to-cart d-flex justify-content-center">
-              <p>Class aptent taciti sociosqu 
-                ad litora torquent per conubia 
-                nostra, per</p>
-            </span>
-          </div>
+              <span class="add-to-cart d-flex justify-content-center">
+                <p>Class aptent taciti sociosqu
+                  ad litora torquent per conubia
+                  nostra, per</p>
+              </span>
+            </div>
           </div>
         </div>
         <div class="col">
-          <div class="card shadow-sm">
-            <div class="card overflow-hidden">
-              <img src="./image/main-page-blog-photo/blog-feature-img-3.jpg" alt="" >
+          <div class="card shadow-sm border-0 shadow-none">
+            <div class="card overflow-hidden border-0 shadow-none">
+              <img src="./image/main-page-blog-photo/blog-feature-img-3.jpg" alt="">
             </div>
-            <div class="card-body ">
+            <div class="card-body bg-transparent">
               <h6 class="product-name d-flex justify-content-center">
-                <a itemprop="url" href="#">Flower Beauty</a>                </a>
+                <a itemprop="url" class="text-dark text-decoration-none" href="#">Flower Beauty</a> </a>
               </h6>
-            <span class="add-to-cart d-flex justify-content-center">
-              <p>Class aptent taciti sociosqu 
-                ad litora torquent per conubia 
-                nostra, per</p>
-            </span>
-          </div>
+              <span class="add-to-cart d-flex justify-content-center">
+                <p>Class aptent taciti sociosqu
+                  ad litora torquent per conubia
+                  nostra, per</p>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-   <!--From our Blog section stop-->
+  <!--From our Blog section stop-->
 
 
-   <!--Footer start-->
-<footer >
-<div class="container" style="border-bottom: 1px solid   #8f8484;">
-  <div class=" row row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4" style="padding-top: 5%">
-    <div class="col" >
-        <ul>
-          <h6>CUSTOMER SERVICE</h6>
-          <li><a href="">Help & Contact Us</a></li>
-          <li><a href="">Returns & Refunds</a></li>
-          <li><a href="">Online Stores</a></li>
-          <li><a href="">Terms & Conditions</a></li>
-        </ul>
-    </div>
-    <div class="col">
-      <ul>
-        <h6>COMPANY</h6>
-        <li><a href="">About Us</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Order Tracking</a></li>
-        <li><a href="">FAQ Page</a></li>
-        <li><a href="">Contact Us</a></li>
-        <li><a href="">Login</a></li>
-      </ul>
-    </div>
-    <div class="col">
-      <ul>
-        <h6>SOCIAL MEDIA</h6>
-        <li><a href="">Twitter</a></li>
-        <li><a href="">Instagram</a></li>
-        <li><a href="">Tumblr</a></li>
-        <li><a href="">Pinterest</a></li>
-      </ul>
-    </div>
-    <div class="col">
-      <ul>
-        <h6>ARCHIVE</h6>
-        <li><a href="">Designer Shoes</a></li>
-        <li><a href="">Gallery</a></li>
-        <li><a href="">Pricing</a></li>
-        <li><a href="">Feature Index</a></li>
-        <li><a href="">Login</a></li>
-        <li><a href="">Help & Support</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="container" style="margin-bottom: 1%; margin-top: 1%;" >
-  <div class="row">
-    <div class="col">
-      <div>© 2018 <a href="" ></a>Qode Interactive</a>, All Rights Reserved</div>
-    </div>
-    <div class="col">
-      <div class="footer-photo"><img src="./image/footer-bottom-1.png" alt=""></div>
-    </div>
-    <div class="col">
-      <div class="mkdf-grid-col-4">
-        <span class="socialmedia">INSTAGRAM</span>
-        <span class="socialmedia">FACEBOOK</span>
+
+  <!--Footer start-->
+  <footer>
+    <div class="container" style="border-bottom: 1px solid   #8f8484;">
+      <div class=" row row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4" style="padding-top: 5%">
+        <div class="col">
+          <ul>
+            <h6>CUSTOMER SERVICE</h6>
+            <li><a href="">Help & Contact Us</a></li>
+            <li><a href="">Returns & Refunds</a></li>
+            <li><a href="">Online Stores</a></li>
+            <li><a href="">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <h6>COMPANY</h6>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Order Tracking</a></li>
+            <li><a href="">FAQ Page</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Login</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <h6>SOCIAL MEDIA</h6>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Instagram</a></li>
+            <li><a href="">Tumblr</a></li>
+            <li><a href="">Pinterest</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <h6>ARCHIVE</h6>
+            <li><a href="">Designer Shoes</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="">Feature Index</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Help & Support</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</footer>
-   <!--Footer son-->
+    <div class="container" style="margin-bottom: 1%; margin-top: 1%;">
+      <div class="row">
+        <div class="col">
+          <div>© 2018 <a href=""></a>Qode Interactive</a>, All Rights Reserved</div>
+        </div>
+        <div class="col">
+          <div class="footer-photo"><img src="./image/footer-bottom-1.png" alt=""></div>
+        </div>
+        <div class="col">
+          <div class="mkdf-grid-col-4">
+            <span class="socialmedia">INSTAGRAM</span>
+            <span class="socialmedia">FACEBOOK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--Footer son-->
 </body>
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script src="/vegasSlider/vegas.min.js"></script>
@@ -547,27 +671,98 @@
       { src: "./image/slider-photo/slider1.jpg" },
       { src: "./image/slider-photo/slider2.jpg" },
       { src: "./image/slider-photo/slider3.jpg" }
-    ]
+    ],
+    animation: ['kenburnsUpRight']
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./draggable-carousel-jelly/script/jeuqry.jellySlider-1.0.js"></script>
 <script src="./assets/js/script.js"></script>
+
+
 <!--Script show filter menu for product -->
 <script>
   let filterProductShow = document.getElementById("filter-product")
-  filterProductShow.addEventListener("mouseenter" ,()=>{
-     document.getElementById("filter").style.display="block";
+  filterProductShow.addEventListener("mouseenter", () => {
+    document.getElementById("filter").style.display = "block";
   });
-  filterProductShow.addEventListener("mouseleave" ,()=>{
-     document.getElementById("filter").style.display="none";
+  filterProductShow.addEventListener("mouseleave", () => {
+    document.getElementById("filter").style.display = "none";
   });
   let filterMenuShow = document.getElementById("filter")
-  filterMenuShow.addEventListener("mouseenter" ,()=>{
-     document.getElementById("filter").style.display="block";
+  filterMenuShow.addEventListener("mouseenter", () => {
+    document.getElementById("filter").style.display = "block";
   });
-  filterMenuShow.addEventListener("mouseleave" ,()=>{
-     document.getElementById("filter").style.display="none";
+  filterMenuShow.addEventListener("mouseleave", () => {
+    document.getElementById("filter").style.display = "none";
   });
 </script>
 <!--Script show filter menu for product son-->
+
+<!--Navbar Script start-->
+<script>
+  $(document).ready(function () {
+    $("#homeSub").click(function () {
+      $(".home-sub-menu").toggle();
+      $("#homeSub .fa-caret-right").toggle();
+      $("#homeSub .fa-caret-down").toggle();
+    });
+
+    $("#pagesSub").click(function () {
+      $(".pages-sub-menu").toggle();
+      $("#pagesSub .fa-caret-right").toggle();
+      $("#pagesSub .fa-caret-down").toggle();
+    });
+  });
+
+  /*navbar basket button open and close sciript */
+  $("#menu .shopping-bag-show-btn").click(function () {
+    $(".card-sub-menu").toggle();
+  });
+  /*navbar basket button open and close sciript */
+
+
+  $("#shopSub").click(function () {
+    $("#menu .shop-sub-menu").toggle()
+  });
+
+  $("#menu .shop-sub-menu h6").click(function () {
+    $(this).nextAll().toggle().animate(3)
+    $(this).children().toggle();
+  });
+
+
+
+
+  /*navbar search button open and close sciript */
+  $(".primary-menu-li .search .searchbtn").click(function () {
+    $(".search-sub-menu").toggle();
+  });
+  /*navbar search button open and close sciript */
+
+  /* navbar close and open scriript */
+  function closeNav() {
+    document.getElementById("menu").style.width = "0%";
+    document.getElementById("menu").style.minWidth = "0%";
+    document.getElementById("menu").style.padding = "0";
+    document.getElementsByClassName("fa-bars")[0].style.display = "block";
+    document.getElementsByClassName("fa-times")[0].style.display = "none";
+  }
+
+  function openNav() {
+    document.getElementById("menu").style.width =
+      document.getElementById("menu").style.width = "420px";
+    document.getElementById("menu").style.maxWidth = "100%";
+    document.getElementById("menu").style.padding = "56px 51px 80px 75px";
+    document.getElementsByClassName("fa-bars")[0].style.display = "none";
+    document.getElementsByClassName("fa-times")[0].style.display = "block";
+  }
+  /* navbar close and open scriript son*/
+
+
+
+</script>
+<!--Navbar Script Son-->
+
+
 </html>
