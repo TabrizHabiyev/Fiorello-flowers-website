@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./swiperSlider/css/swiper-bundle.css"/>
   <link rel="stylesheet" href="./draggable-carousel-jelly/css/jellySlider.css">
   <link rel="stylesheet" href="./vegasSlider/vegas.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
@@ -12,6 +13,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Document</title>
 </head>
+
 <body>
 
   <!--Navbar start-->
@@ -595,7 +597,34 @@
   </section>
   <!--From our Blog section stop-->
 
-
+<!--Collage slider section start-->
+  <section id="collage-slider-section" >
+    <div class="container mt-5 mb-5">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <div style="max-width: 470px;margin: 0 auto;">
+                <img src="./image/slider-photo/testimonial-img-1.png" class="center-block d-block mx-auto mb-5" alt="">
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+                <h5 class="text-center">Jasmine White</h5>
+                <h6 class="text-center">Florist</h6>
+            </div>
+          </div>
+          <div class="swiper-slide">
+              <div style="max-width: 470px;margin: 0 auto;">
+                <img src="./image/slider-photo/testimonial-img-2.png" class="center-block d-block mx-auto mb-5" alt="">
+                <p class="text-center">Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus lingua. </p>
+                <h5 class="text-center">Anna Barnes</h5>
+                <h6 class="text-center">Florist</h6>
+          </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+<!--Collage slider section son-->
 
   <!--Footer start-->
   <footer>
@@ -699,6 +728,11 @@
 </script>
 <!--Script show filter menu for product son-->
 
+
+
+
+
+
 <!--Navbar Script start-->
 <script>
   $(document).ready(function () {
@@ -765,4 +799,24 @@
 <!--Navbar Script Son-->
 
 
+ <!-- Swiper JS -->
+ <script src="./swiperSlider/js/swiper-bundle.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+$(window).load(function() {
+ let touchSlider=false;
+ var swiper = new Swiper(".mySwiper", {
+     navigation: {
+       nextEl: ".swiper-button-next",
+       prevEl: ".swiper-button-prev",
+     },
+     loop: true,
+     autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+   });
+});
+</script>
 </html>
