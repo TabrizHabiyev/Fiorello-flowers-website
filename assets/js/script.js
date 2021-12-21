@@ -1,4 +1,3 @@
-
 /*Add to basket sciript */
 let totalPrice = document.getElementById("totalprice");
 let allBtn= document.querySelectorAll(".add-tocart-hover");
@@ -6,7 +5,6 @@ SetBasket()
 allBtn.forEach(btn=>{
    btn.onclick = function(e){
      e.preventDefault()
-
    let id = btn.parentElement.parentElement.getAttribute("data-id")
    SetBasket()
    let localStorageArr =JSON.parse(localStorage.getItem("basket"));
@@ -28,8 +26,6 @@ allBtn.forEach(btn=>{
    totalPriceFunc();
    }
 })
-
-
 function totalPriceFunc()
 {
     let localStorageArr = JSON.parse(localStorage.getItem("basket"));
@@ -41,6 +37,7 @@ function totalPriceFunc()
     });
     totalPrice.innerText="$"+total;
 }
+totalPriceFunc()
 
 function GetBasketCount()
 {
@@ -48,6 +45,7 @@ function GetBasketCount()
     document.getElementById("productCount").innerText=localStorageArr.length;
 }
 GetBasketCount()
+
 function SetBasket()
 {
     if (!localStorage.getItem("basket")) {
