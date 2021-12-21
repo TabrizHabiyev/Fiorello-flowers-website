@@ -190,7 +190,7 @@ $(window).load(function() {
   $("#menu .shopping-bag-show-btn").click(function () {
     $(".card-sub-menu").toggle();
   });
-  /*navbar basket button open and close sciript */
+  /*navbar basket button open and close sciript  son*/
 
 
   $("#shopSub").click(function () {
