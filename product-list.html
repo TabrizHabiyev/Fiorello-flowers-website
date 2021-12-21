@@ -31,7 +31,7 @@
         height: 40px;
         color: black;
         border-radius: 0px !important;
-        border: 1px solid #eee !important;
+    
         background-color: white;
     }
 
@@ -256,16 +256,16 @@
                                 src="./image/product-list/shop-2-gallery-4.jpg" alt="" width="118" height="110">
                         </div>
                         <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                            <div class="tab-slider tab-pane fade show active" id="v-pills-home" role="tabpanel"
                                 aria-labelledby="v-pills-home-tab"><img src="./image/product-list/shop-2-gallery-1.jpg"
                                     alt="" class="img-tab"></div>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                            <div class=" tab-slider tab-pane fade" id="v-pills-profile" role="tabpanel"
                                 aria-labelledby="v-pills-profile-tab"><img
                                     src="./image/product-list/shop-2-gallery-2.jpg" alt="" class="img-tab"></div>
-                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                            <div class="tab-slider tab-pane fade" id="v-pills-messages" role="tabpanel"
                                 aria-labelledby="v-pills-messages-tab"><img
                                     src="./image/product-list/shop-2-gallery-3.jpg" alt="" class="img-tab"></div>
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                            <div class="tab-slider tab-pane fade" id="v-pills-settings" role="tabpanel"
                                 aria-labelledby="v-pills-settings-tab"><img
                                     src="./image/product-list/shop-2-gallery-4.jpg" alt="" class="img-tab"></div>
                         </div>
@@ -351,7 +351,6 @@
                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                           </div>
                           </div>
-
                           <div class="row">
                           <h3> Add a review</h3> 
                             <div class="form-group">
@@ -458,8 +457,6 @@
 <script>
     let modal = document.getElementById("Popup");
     let img = document.querySelectorAll(".img-tab");
-
-    console.log(img)
     var modalImg = document.getElementById("img");
 
     img.forEach(e => {
@@ -477,11 +474,9 @@
     let popright = document.getElementById("popupright");
     popleft.onclick=()=>
     {
-         alert("sdd")
     }
     popright.onclick=()=>
     {
-         alert("sjjjjjjdd")
     }
 </script>
 

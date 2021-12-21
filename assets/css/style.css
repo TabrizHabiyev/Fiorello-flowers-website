@@ -8,7 +8,7 @@
 
 
 /*SwipeSlider */
-.swiper-button-next ,.swiper-button-prev
+#collage-slider-section  .swiper-button-next
 {
   position:absolute;
   top: 40%;
@@ -18,11 +18,21 @@
   font-size: 40px;
   font-weight: 0;
 }
-.swiper-button-next
+#vollage-slider-section .swiper-button-prev
+{
+    position:absolute;
+    top: 40%;
+    cursor: pointer;
+    margin: 10;
+    z-index: 1000;
+    font-size: 40px;
+    font-weight: 0;
+}
+#collage-slider-section .swiper-button-next
 {
   right: 20%;
 }
-.swiper-button-prev
+#collage-slider-section .swiper-button-prev
 {
   left: 20%;
 }
@@ -288,7 +298,7 @@ transform:rotateY(180deg);
 
 
 /*SwipeSlider */
-.swiper-button-next ,.swiper-button-prev
+#collage-slider-section .swiper-button-next ,.swiper-button-prev
 {
     display: none;
 }
