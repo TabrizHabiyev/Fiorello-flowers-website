@@ -683,3 +683,22 @@ footer ul li a
     color: #f34f3f;
 }
 /*Footer desing son */
+
+
+
+/*Shop list page desing start */
+#product-list .card .product-hover
+{
+  display: none!important;
+}
+#product-list .card 
+{
+  cursor: pointer;
+}
+#product-list .card:hover .product-hover
+{
+  display:grid!important;
+}
+
+
+/* Shop list page desing son */
