@@ -18,7 +18,7 @@
   font-size: 40px;
   font-weight: 0;
 }
-#vollage-slider-section .swiper-button-prev
+#collage-slider-section  .swiper-button-prev
 {
     position:absolute;
     top: 40%;
@@ -699,6 +699,56 @@ footer ul li a
 {
   display:grid!important;
 }
-
-
 /* Shop list page desing son */
+
+
+
+/* Tab list page desing start */
+#tab-one .nav-item > .nav-link
+{
+    border: 1px solid #eee!important;
+    border-radius: 0;
+    padding: 10px 10px 10px 10px;
+}
+#tab-one .nav-item  .active
+{
+   background-color: #F34F3F;
+   color: white!important;
+}
+#tab-one .tab-content > .tab-pane
+{
+    border: 1px solid #eee!important;
+    padding: 9%;
+}
+#tab2 .nav-item  .active
+{
+   color: #F34F3F!important;
+}
+#tab2 .nav-item > .nav-link
+{
+    border-radius: 0;
+    padding: 10px 10px 10px 10px;
+}
+#tab2 .tab-content > .tab-pane
+{
+    border-bottom:  1px  solid #eee!important;
+    border-top:  1px  solid #eee!important;
+    padding: 5%;
+}
+#tab3   .nav-link
+{
+    border: 1px solid #eee!important;
+    border-radius: 0;
+    padding: 16px 45px 9px 45px;
+}
+#tab3 .nav-link.active
+{
+   background-color: #F34F3F;
+   color: white!important;
+}
+#tab3 .tab-content > .tab-pane
+{
+    border: 1px solid #eee!important;
+    padding: 2%;
+}
+/* Tab list page desing son */
